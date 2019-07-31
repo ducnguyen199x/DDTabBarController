@@ -1,0 +1,6 @@
+framework module DDTabBarController {
+  umbrella header "DDTabBarController-umbrella.h"
+
+  export *
+  module * { export * }
+}

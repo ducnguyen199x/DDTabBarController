@@ -1,0 +1,16 @@
+PODS:
+  - DDTabBarController (0.1.0)
+
+DEPENDENCIES:
+  - DDTabBarController (from `../`)
+
+EXTERNAL SOURCES:
+  DDTabBarController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DDTabBarController: 6cfd2c53717b347fffd8584a21dba74841cbfac8
+
+PODFILE CHECKSUM: 337f82e41370ec28d6a903b8692cd9ce09e3e254
+
+COCOAPODS: 1.5.2
