@@ -22,7 +22,7 @@ pod 'DDTabBarController'
 
 ## Author
 
-Duc Nguyen, duc.nguyenthanh1995@@gmail.com
+Duc Nguyen, duc.nguyenthanh1995@gmail.com
 
 ## License
 
