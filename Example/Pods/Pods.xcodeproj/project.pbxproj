@@ -10,13 +10,16 @@
 		0365D5BA500FEA2BE86EF0D910DD90D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		0BC46021FBE405FFF77024422C4516B9 /* Pods-DDTabBarController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F48335C92C5E09FA4AAFC4FAA2749925 /* Pods-DDTabBarController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A57B65E5A82F9488B0F077017D0FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		4E40849822F17BFD00660E8C /* DDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E40849722F17BFD00660E8C /* DDTabBarController.swift */; };
+		4E44071F22F2935C00450600 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44071E22F2935C00450600 /* UIView+Extensions.swift */; };
+		4E44072222F2FB2800450600 /* DDTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44072122F2FB2800450600 /* DDTabBar.swift */; };
+		4E44072422F2FB6E00450600 /* DDTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44072322F2FB6E00450600 /* DDTabBarItem.swift */; };
 		60044421816A1A56B65956ECE9C97957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		7D23EE4053B8657AE2F2B29C180E436E /* Pods-DDTabBarController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9E6461228F6007B79393A98D91D22 /* Pods-DDTabBarController_Tests-dummy.m */; };
 		7F6EA939F6E57CC65061D6495656C658 /* Pods-DDTabBarController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AAA00ECC3873967EBBD6CCA086ACA0 /* Pods-DDTabBarController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFCAC483CB98D3EFA50566F4F3BE99A5 /* DDTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE7881F20A93849D39E7F6A52B5D3D /* DDTabBarController-dummy.m */; };
 		B74C0AEDE327AB1B4194F148BCBB7A57 /* Pods-DDTabBarController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D759ECEF71012F8803E31DBBF3CCE /* Pods-DDTabBarController_Example-dummy.m */; };
 		F02015A5C6DDB30C4E48DEC95858AD1F /* DDTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64924510749287D9EAC3E4BA76CE3C4B /* DDTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF0AB019D1DA10F85F7605D02F7B839A /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04B9D49690D784F3CE9A63A39FCF6B /* ReplaceMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +42,16 @@
 /* Begin PBXFileReference section */
 		05AA873993D9D0841DE7173252F924BC /* DDTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DDTabBarController.modulemap; sourceTree = "<group>"; };
 		0C21FCAE18C99D02D6FF4E996A92DEC6 /* Pods-DDTabBarController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDTabBarController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		0E97238535C138369EACFC36AA44AD2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0E97238535C138369EACFC36AA44AD2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1128C6FBC2C387167FE30376A88E2101 /* Pods-DDTabBarController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDTabBarController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A804F5E29001BCF3DC2D8BFC0F85AE9 /* DDTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDTabBarController-prefix.pch"; sourceTree = "<group>"; };
-		39FF1E9DAE88F3C8F2B4A729298D1820 /* DDTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = DDTabBarController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		39FF1E9DAE88F3C8F2B4A729298D1820 /* DDTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DDTabBarController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F1B959795B4099AE92B854E3BE65AD5 /* Pods-DDTabBarController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDTabBarController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		50A8984D6E6058C42EECE04C535755D5 /* DDTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DDTabBarController.framework; path = DDTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E40849722F17BFD00660E8C /* DDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTabBarController.swift; sourceTree = "<group>"; };
+		4E44071E22F2935C00450600 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		4E44072122F2FB2800450600 /* DDTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTabBar.swift; sourceTree = "<group>"; };
+		4E44072322F2FB6E00450600 /* DDTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTabBarItem.swift; sourceTree = "<group>"; };
+		50A8984D6E6058C42EECE04C535755D5 /* DDTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		634917208D3AB6A3491A56EBE08FDF5C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64924510749287D9EAC3E4BA76CE3C4B /* DDTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDTabBarController-umbrella.h"; sourceTree = "<group>"; };
@@ -55,11 +62,10 @@
 		6F7D759ECEF71012F8803E31DBBF3CCE /* Pods-DDTabBarController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDTabBarController_Example-dummy.m"; sourceTree = "<group>"; };
 		784DF8867E551A2A4758D436F577AE73 /* Pods-DDTabBarController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDTabBarController_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		78C82D2AD0EB975DC2BDA7FC4C2FE45F /* Pods-DDTabBarController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDTabBarController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7B04B9D49690D784F3CE9A63A39FCF6B /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = DDTabBarController/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9465D24A6503050DF68A9133E384027A /* Pods_DDTabBarController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DDTabBarController_Tests.framework; path = "Pods-DDTabBarController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9465D24A6503050DF68A9133E384027A /* Pods_DDTabBarController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDTabBarController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7266228918C1D9FAAC15860CB92EB0 /* Pods-DDTabBarController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDTabBarController_Tests-resources.sh"; sourceTree = "<group>"; };
-		9CFDC89CF1EF7AF986528CB51354DB61 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9CFDC89CF1EF7AF986528CB51354DB61 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9DE9E6461228F6007B79393A98D91D22 /* Pods-DDTabBarController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDTabBarController_Tests-dummy.m"; sourceTree = "<group>"; };
 		A4B8E815FFBBDFB697288F6DF6935FD8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A540498F3702A67B9F316593E6B40B5F /* Pods-DDTabBarController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDTabBarController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -69,7 +75,7 @@
 		C5A11050A2F2D52B8836C8AFFC475832 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D72DE49820CE8B345B04604F26E0C769 /* Pods-DDTabBarController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDTabBarController_Example-resources.sh"; sourceTree = "<group>"; };
 		DB78320C8B7DC36ADDDADCA73C22E0C1 /* Pods-DDTabBarController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDTabBarController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EA06DC998BB278717E05C0F4A3509CBC /* Pods_DDTabBarController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DDTabBarController_Example.framework; path = "Pods-DDTabBarController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA06DC998BB278717E05C0F4A3509CBC /* Pods_DDTabBarController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDTabBarController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48335C92C5E09FA4AAFC4FAA2749925 /* Pods-DDTabBarController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDTabBarController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		F6AAA00ECC3873967EBBD6CCA086ACA0 /* Pods-DDTabBarController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDTabBarController_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,9 +215,12 @@
 		E2FD9A72EC2E09505831A2CA9FF81FFB /* DDTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				7B04B9D49690D784F3CE9A63A39FCF6B /* ReplaceMe.swift */,
 				F26183821DB39CFE7D2F93670B2C407E /* Pod */,
 				64179951645C1B8A8EDA5FA8E12738D0 /* Support Files */,
+				4E40849722F17BFD00660E8C /* DDTabBarController.swift */,
+				4E44072122F2FB2800450600 /* DDTabBar.swift */,
+				4E44072322F2FB6E00450600 /* DDTabBarItem.swift */,
+				4E44071E22F2935C00450600 /* UIView+Extensions.swift */,
 			);
 			name = DDTabBarController;
 			path = ../..;
@@ -318,12 +327,18 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					F01F3B2F5F962CC6F2A2DF450C2EAE60 = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -359,8 +374,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E44071F22F2935C00450600 /* UIView+Extensions.swift in Sources */,
+				4E44072222F2FB2800450600 /* DDTabBar.swift in Sources */,
 				AFCAC483CB98D3EFA50566F4F3BE99A5 /* DDTabBarController-dummy.m in Sources */,
-				FF0AB019D1DA10F85F7605D02F7B839A /* ReplaceMe.swift in Sources */,
+				4E44072422F2FB6E00450600 /* DDTabBarItem.swift in Sources */,
+				4E40849822F17BFD00660E8C /* DDTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6745A71AC9963FC609F9A3098D2BE991 /* DDTabBarController.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -433,7 +452,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DDTabBarController/DDTabBarController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DDTabBarController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DDTabBarController/DDTabBarController.modulemap";
 				PRODUCT_MODULE_NAME = DDTabBarController;
@@ -551,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6745A71AC9963FC609F9A3098D2BE991 /* DDTabBarController.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -563,7 +583,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DDTabBarController/DDTabBarController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DDTabBarController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DDTabBarController/DDTabBarController.modulemap";
 				PRODUCT_MODULE_NAME = DDTabBarController;
