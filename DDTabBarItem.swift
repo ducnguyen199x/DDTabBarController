@@ -14,12 +14,32 @@ open class DDTabBarItem: UIButton {
     private var title: String?
     private var iconHeight: CGFloat = 50
     var height: CGFloat = -1
+    open private(set) var ddBackgroundImage: UIImage?
+    open var ddBackgroundImageView: UIImageView?
     
-    public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = 35) {
+    public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = 35, backgroundImage: UIImage? = nil) {
         self.init()
         self.height = height
+        setupDDBackgroundImageView(withImage: backgroundImage)
         setupIcon(withImage: icon, iconHeight: iconHeight)
         setupTitle(withTitle: title)
+    }
+    
+    func setupDDBackgroundImageView(withImage image: UIImage?) {
+        let imageView = UIImageView()
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = image
+        
+        // Constraints
+        imageView.widthHeightRatio(ratio: 1)
+        imageView.equalWidth(toView: self, multiplier: 1)
+        imageView.equalHeight(toView: self, multiplier: 1, relatedBy: .lessThanOrEqual)
+        imageView.centerX(toView: self)
+        imageView.top(toView: self)
+
+        ddBackgroundImageView = imageView
     }
     
     func setupIcon(withImage image: UIImage, iconHeight: CGFloat) {
@@ -65,5 +85,10 @@ open class DDTabBarItem: UIButton {
     open func setTitle(_ title: String?) {
         self.title = title
         self.ddTitleLabel?.text = title
+    }
+    
+    open func setDDBackgroundImage(_ image: UIImage?) {
+        ddBackgroundImage = image
+        ddBackgroundImageView?.image = image
     }
 }
