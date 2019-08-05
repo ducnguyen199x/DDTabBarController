@@ -9,15 +9,15 @@ import Foundation
 
 open class DDTabBarController: UITabBarController {
     open var ddTabBar: DDTabBar?
-    private var ddTabBarHeight: CGFloat = 40
-    private var barItemColor: UIColor = .defaultBarItemColor {
+    private var ddTabBarHeight: CGFloat = DDConstant.tabBarHeight
+    private var barItemColor: UIColor = DDConstant.barItemColor {
         didSet {
             ddTabBar?.tintColor = barItemColor
         }
     }
-    private var barItemSelectedColor: UIColor = .defaultBarItemSelectedColor {
+    private var barItemSelectedColor: UIColor = DDConstant.barItemSelectedColor {
         didSet {
-            barItem(atIndex: selectedIndex)?.setColor(barItemSelectedColor)
+            ddTabBar?.barItem(at: selectedIndex)?.setColor(barItemSelectedColor)
         }
     }
     
@@ -26,13 +26,13 @@ open class DDTabBarController: UITabBarController {
         tabBar.isHidden = true
     }
     
-    open func setTabBar(items: [DDTabBarItem], height: CGFloat = 40) {
+    open func setTabBar(items: [DDTabBarItem], height: CGFloat = DDConstant.tabBarHeight) {
         guard !items.isEmpty else { return }
         ddTabBarHeight = height
         let tabBar = DDTabBar(items: items, height: height)
         ddTabBar = tabBar
         ddTabBar?.tintColor = barItemColor
-        barItem(atIndex: 0)?.setColor(barItemSelectedColor)
+        ddTabBar?.barItem(at: 0)?.setColor(barItemSelectedColor)
         view.addSubview(tabBar)
         
         // Constraints
@@ -60,14 +60,8 @@ open class DDTabBarController: UITabBarController {
     }
     
     private func changeTab(from fromIndex: Int, to toIndex: Int) {
-        ddTabBar?.ddBarItems[fromIndex].setColor(barItemColor)
-        ddTabBar?.ddBarItems[toIndex].setColor(barItemSelectedColor)
+        ddTabBar?.barItem(at: fromIndex)?.setColor(barItemColor)
+        ddTabBar?.barItem(at: toIndex)?.setColor(barItemSelectedColor)
         selectedIndex = toIndex
-    }
-    
-    func barItem(atIndex index: Int) -> DDTabBarItem? {
-        guard let ddTabBar = ddTabBar else { return nil }
-        guard index >= 0 && index < ddTabBar.ddBarItems.count else { return nil }
-        return ddTabBar.ddBarItems[index]
     }
 }

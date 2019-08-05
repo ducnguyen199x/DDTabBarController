@@ -5,11 +5,10 @@
 //  Created by Nguyen Thanh Duc on 5/8/19.
 //
 
-extension UIColor {
-    static var defaultBarItemColor: UIColor = .lightGray
-    static var defaultBarItemSelectedColor: UIColor = .blue
-}
-
-extension UIFont {
-    static var defaultBarItemTitleFont: UIFont = .systemFont(ofSize: 14)
+public struct DDConstant {
+    public static var barItemColor: UIColor = .lightGray
+    public static var barItemSelectedColor: UIColor = .blue
+    public static var barItemTitleFont: UIFont = .systemFont(ofSize: 14)
+    public static var tabBarHeight: CGFloat = 40
+    public static var iconHeight: CGFloat = 35
 }

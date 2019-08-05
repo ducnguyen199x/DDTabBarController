@@ -11,7 +11,7 @@ open class DDTabBarItem: UIButton {
     open private(set) var ddBackgroundImage: UIImage?
     private var icon: UIImage?
     private var title: String?
-    private var iconHeight: CGFloat = 50
+    private var iconHeight: CGFloat = DDConstant.iconHeight
     open var iconImageView: UIImageView?
     open var ddTitleLabel: UILabel?
     open var ddBackgroundImageView: UIImageView?
@@ -19,7 +19,7 @@ open class DDTabBarItem: UIButton {
     
     var height: CGFloat = -1
     
-    public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = 35, backgroundImage: UIImage? = nil) {
+    public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = DDConstant.iconHeight, backgroundImage: UIImage? = nil) {
         self.init()
         self.height = height
         setupDDBackgroundImageView(withImage: backgroundImage)
@@ -68,9 +68,9 @@ open class DDTabBarItem: UIButton {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = title
-        label.textColor = .defaultBarItemColor
+        label.textColor = DDConstant.barItemColor
         label.contentMode = .center
-        label.font = .defaultBarItemTitleFont
+        label.font = DDConstant.barItemTitleFont
         
         // Constraints
         label.equalWidth(toView: self, multiplier: 1, relatedBy: .lessThanOrEqual)

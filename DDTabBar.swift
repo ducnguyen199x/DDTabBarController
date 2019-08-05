@@ -59,4 +59,20 @@ open class DDTabBar: UITabBar {
             }
         }
     }
+    
+    open func barItem(at index: Int) -> DDTabBarItem? {
+        guard index >= 0 && index < ddBarItems.count else { return nil }
+        return ddBarItems[index]
+    }
+    
+    // Provide interation for Items lying outside of TabBar
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        for item in ddBarItems {
+            let itemPoint = item.convert(point, from: self)
+            if item.bounds.contains(itemPoint) {
+                return item.hitTest(itemPoint, with: event)
+            }
+        }
+        return super.hitTest(point, with: event)
+    }
 }
