@@ -10,14 +10,14 @@ import Foundation
 open class DDTabBarController: UITabBarController {
     open var ddTabBar: DDTabBar?
     private var ddTabBarHeight: CGFloat = 40
-    private var barItemColor: UIColor = .blue {
+    private var barItemColor: UIColor = .defaultBarItemColor {
         didSet {
             ddTabBar?.tintColor = barItemColor
         }
     }
-    private var barItemSelectedColor: UIColor = .lightGray {
+    private var barItemSelectedColor: UIColor = .defaultBarItemSelectedColor {
         didSet {
-            barItem(atIndex: selectedIndex)?.tintColor = barItemSelectedColor
+            barItem(atIndex: selectedIndex)?.setColor(barItemSelectedColor)
         }
     }
     
@@ -32,7 +32,7 @@ open class DDTabBarController: UITabBarController {
         let tabBar = DDTabBar(items: items, height: height)
         ddTabBar = tabBar
         ddTabBar?.tintColor = barItemColor
-        barItem(atIndex: 0)?.tintColor = barItemSelectedColor
+        barItem(atIndex: 0)?.setColor(barItemSelectedColor)
         view.addSubview(tabBar)
         
         // Constraints
@@ -60,8 +60,8 @@ open class DDTabBarController: UITabBarController {
     }
     
     private func changeTab(from fromIndex: Int, to toIndex: Int) {
-        ddTabBar?.ddBarItems[fromIndex].tintColor = barItemColor
-        ddTabBar?.ddBarItems[toIndex].tintColor = barItemSelectedColor
+        ddTabBar?.ddBarItems[fromIndex].setColor(barItemColor)
+        ddTabBar?.ddBarItems[toIndex].setColor(barItemSelectedColor)
         selectedIndex = toIndex
     }
     

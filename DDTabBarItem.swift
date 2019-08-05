@@ -8,14 +8,16 @@
 import Foundation
 
 open class DDTabBarItem: UIButton {
-    open var iconImageView: UIImageView?
+    open private(set) var ddBackgroundImage: UIImage?
     private var icon: UIImage?
-    open var ddTitleLabel: UILabel?
     private var title: String?
     private var iconHeight: CGFloat = 50
-    var height: CGFloat = -1
-    open private(set) var ddBackgroundImage: UIImage?
+    open var iconImageView: UIImageView?
+    open var ddTitleLabel: UILabel?
     open var ddBackgroundImageView: UIImageView?
+    
+    
+    var height: CGFloat = -1
     
     public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = 35, backgroundImage: UIImage? = nil) {
         self.init()
@@ -66,8 +68,9 @@ open class DDTabBarItem: UIButton {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = title
+        label.textColor = .defaultBarItemColor
         label.contentMode = .center
-        label.font = .systemFont(ofSize: 14.0)
+        label.font = .defaultBarItemTitleFont
         
         // Constraints
         label.equalWidth(toView: self, multiplier: 1, relatedBy: .lessThanOrEqual)
@@ -90,5 +93,10 @@ open class DDTabBarItem: UIButton {
     open func setDDBackgroundImage(_ image: UIImage?) {
         ddBackgroundImage = image
         ddBackgroundImageView?.image = image
+    }
+    
+    func setColor(_ color: UIColor) {
+        tintColor = color
+        ddTitleLabel?.textColor = color
     }
 }
