@@ -20,7 +20,9 @@ open class DDTabBar: UITabBar {
     }
     
     open func setupView() {
-        backgroundColor = .clear
+        backgroundColor = .white
+        tintColor = .red
+        height(height)
         
         // Container View
         let containerView = UIView()
@@ -29,24 +31,23 @@ open class DDTabBar: UITabBar {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
             // Constraints
-        containerView.height(height)
+        containerView.top(toView: self)
         containerView.bottom(toView: self)
         containerView.leading(toView: self)
         containerView.trailing(toView: self)
         
         // Items Stack View
         let stackView = UIStackView()
-        addSubview(stackView)
+        containerView.addSubview(stackView)
         stackView.backgroundColor = .clear
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .bottom
         stackView.distribution = .fillEqually
         
             // Constraints
-        stackView.top(toView: self)
-        stackView.bottom(toView: self)
-        stackView.leading(toView: self)
-        stackView.trailing(toView: self)
+        stackView.bottom(toView: containerView)
+        stackView.leading(toView: containerView)
+        stackView.trailing(toView: containerView)
         
         ddBarItems.forEach { item in
             item.translatesAutoresizingMaskIntoConstraints = false
