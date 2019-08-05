@@ -23,7 +23,10 @@ class ViewController: DDTabBarController {
         let timer = DDTabBarItem(icon: #imageLiteral(resourceName: "timer"), title: "Time")
         let account = DDTabBarItem(icon: #imageLiteral(resourceName: "account"), title: "Account")
         
-        let vc1 = UIViewController()
+        onNow.ddBackgroundImageView?.backgroundColor = .orange
+        onNow.ddBackgroundImageView?.layer.cornerRadius = 43
+        
+        let vc1 = viewController(for: "PageContent")
         vc1.view.backgroundColor = .green
         let vc2 = UIViewController()
         vc2.view.backgroundColor = .blue
@@ -37,6 +40,11 @@ class ViewController: DDTabBarController {
         setTabBar(items: [calendar, location, onNow, timer, account], height: 90)
         viewControllers = [vc1, vc2, vc3, vc4, vc5]
         ddTabBar?.backgroundColor = .black
+    }
+    
+    func viewController(for identifier: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: identifier)
     }
 }
 

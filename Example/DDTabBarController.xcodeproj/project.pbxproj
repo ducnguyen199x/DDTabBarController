@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F6302DC9A17E527D3B66BED /* Pods_DDTabBarController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5EE0BA5159DD67EB4E3F4F /* Pods_DDTabBarController_Tests.framework */; };
+		4E4E966E22F8295300886E1F /* PageContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E966D22F8295300886E1F /* PageContentController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		3B6E87EBB9E74A948AB4399B /* Pods-DDTabBarController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDTabBarController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDTabBarController_Tests/Pods-DDTabBarController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3CBB8D55DFAC01C253F21A94 /* Pods-DDTabBarController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDTabBarController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDTabBarController_Tests/Pods-DDTabBarController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E278BB756E7CA94622EEBD7 /* Pods_DDTabBarController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDTabBarController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4E966D22F8295300886E1F /* PageContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentController.swift; sourceTree = "<group>"; };
 		5F30C2023877D1869BF3DBC3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DDTabBarController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDTabBarController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				4E4E966D22F8295300886E1F /* PageContentController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -328,6 +331,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				4E4E966E22F8295300886E1F /* PageContentController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
