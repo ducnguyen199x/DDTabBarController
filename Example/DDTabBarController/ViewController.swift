@@ -13,18 +13,19 @@ class ViewController: DDTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ddDelegate = self
         setupUI()
     }
     
     func setupUI() {
         let calendar = DDTabBarItem(icon: #imageLiteral(resourceName: "calendar"),title: "Calendar")
         let location = DDTabBarItem(icon: #imageLiteral(resourceName: "location"), title: "Location")
-        let onNow = DDTabBarItem(height: 110,icon: #imageLiteral(resourceName: "play"), title: "On Now")
+        let onNow = DDTabBarItem(height: 110,icon: #imageLiteral(resourceName: "play"), title: "On Now", wrapperMode: .rounded)
         let timer = DDTabBarItem(icon: #imageLiteral(resourceName: "timer"), title: "Time")
         let account = DDTabBarItem(icon: #imageLiteral(resourceName: "account"), title: "Account")
         
-        onNow.ddBackgroundImageView?.backgroundColor = .orange
-        onNow.ddBackgroundImageView?.layer.cornerRadius = 43
+        onNow.ddContentWrapperView?.layer.borderWidth = 0.5
+        onNow.ddContentWrapperView?.layer.borderColor = UIColor.black.cgColor
         
         let vc1 = viewController(for: "PageContent")
         vc1.view.backgroundColor = .green
@@ -48,3 +49,17 @@ class ViewController: DDTabBarController {
     }
 }
 
+extension ViewController: DDTabBarControllerDelegate {
+    func ddTabBar(_ ddTabBar: DDTabBar, didSwitch fromItem: DDTabBarItem, toItem: DDTabBarItem) {
+        let fromIndex = ddTabBar.ddBarItems.index(of: fromItem)
+        let toIndex = ddTabBar.ddBarItems.index(of: toItem)
+        
+        if fromIndex == 2 {
+            fromItem.ddContentWrapperView?.backgroundColor = .white
+        }
+        
+        if toIndex == 2 {
+            toItem.ddContentWrapperView?.backgroundColor = .lightGray
+        }
+    }
+}
