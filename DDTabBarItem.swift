@@ -7,11 +7,6 @@
 
 import Foundation
 
-public enum DDWrapperMode {
-    case normal
-    case rounded
-}
-
 open class DDTabBarItem: UIButton {
     private var icon: UIImage?
     private var title: String?
@@ -100,28 +95,5 @@ open class DDTabBarItem: UIButton {
     func setColor(_ color: UIColor) {
         tintColor = color
         ddTitleLabel?.textColor = color
-    }
-}
-
-class DDWrapperView: UIView {
-    open var wrapperMode: DDWrapperMode = .normal
-    
-    convenience init(wrapperMode: DDWrapperMode) {
-        self.init()
-        self.wrapperMode = wrapperMode
-        setupView()
-    }
-    
-    func setupView() {}
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        switch wrapperMode {
-        case .normal:
-            break
-        case .rounded:
-            layer.cornerRadius = frame.width/2
-            break
-        }
     }
 }

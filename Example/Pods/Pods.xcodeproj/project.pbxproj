@@ -10,6 +10,7 @@
 		0365D5BA500FEA2BE86EF0D910DD90D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		0BC46021FBE405FFF77024422C4516B9 /* Pods-DDTabBarController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F48335C92C5E09FA4AAFC4FAA2749925 /* Pods-DDTabBarController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A57B65E5A82F9488B0F077017D0FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		4E3FC5E522F985AE0026C1F0 /* DDWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FC5E422F985AE0026C1F0 /* DDWrapperView.swift */; };
 		4E40849822F17BFD00660E8C /* DDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E40849722F17BFD00660E8C /* DDTabBarController.swift */; };
 		4E44071F22F2935C00450600 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44071E22F2935C00450600 /* UIView+Extensions.swift */; };
 		4E44072222F2FB2800450600 /* DDTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44072122F2FB2800450600 /* DDTabBar.swift */; };
@@ -48,6 +49,7 @@
 		1A804F5E29001BCF3DC2D8BFC0F85AE9 /* DDTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDTabBarController-prefix.pch"; sourceTree = "<group>"; };
 		39FF1E9DAE88F3C8F2B4A729298D1820 /* DDTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DDTabBarController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F1B959795B4099AE92B854E3BE65AD5 /* Pods-DDTabBarController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDTabBarController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4E3FC5E422F985AE0026C1F0 /* DDWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDWrapperView.swift; sourceTree = "<group>"; };
 		4E40849722F17BFD00660E8C /* DDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTabBarController.swift; sourceTree = "<group>"; };
 		4E44071E22F2935C00450600 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4E44072122F2FB2800450600 /* DDTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTabBar.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				4E40849722F17BFD00660E8C /* DDTabBarController.swift */,
 				4E44072122F2FB2800450600 /* DDTabBar.swift */,
 				4E44072322F2FB6E00450600 /* DDTabBarItem.swift */,
+				4E3FC5E422F985AE0026C1F0 /* DDWrapperView.swift */,
 				4E44071E22F2935C00450600 /* UIView+Extensions.swift */,
 			);
 			name = DDTabBarController;
@@ -383,6 +386,7 @@
 				4E44072422F2FB6E00450600 /* DDTabBarItem.swift in Sources */,
 				4E40849822F17BFD00660E8C /* DDTabBarController.swift in Sources */,
 				4E4E966C22F810CA00886E1F /* Constant.swift in Sources */,
+				4E3FC5E522F985AE0026C1F0 /* DDWrapperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
