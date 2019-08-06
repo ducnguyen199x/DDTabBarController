@@ -7,8 +7,14 @@
 
 import Foundation
 
+@objc public protocol DDTabBarControllerDelegate: class {
+    @objc optional func ddTabBarController(_ ddTabBarController: DDTabBarController, didSelect viewController: UIViewController)
+    @objc optional func ddTabBar(_ ddTabBar: DDTabBar, didSwitch fromItem: DDTabBarItem, toItem: DDTabBarItem)
+}
+
 open class DDTabBarController: UITabBarController {
     open var ddTabBar: DDTabBar?
+    open var ddDelegate: DDTabBarControllerDelegate?
     private var ddTabBarHeight: CGFloat = DDConstant.tabBarHeight
     private var barItemColor: UIColor = DDConstant.barItemColor {
         didSet {
@@ -60,8 +66,24 @@ open class DDTabBarController: UITabBarController {
     }
     
     private func changeTab(from fromIndex: Int, to toIndex: Int) {
-        ddTabBar?.barItem(at: fromIndex)?.setColor(barItemColor)
-        ddTabBar?.barItem(at: toIndex)?.setColor(barItemSelectedColor)
+        let previousItem = ddTabBar?.barItem(at: fromIndex)
+        let nextItem = ddTabBar?.barItem(at: toIndex)
+
+        previousItem?.setColor(barItemColor)
+        nextItem?.setColor(barItemSelectedColor)
         selectedIndex = toIndex
+        
+        if let ddTabBar = ddTabBar, let previousItem = previousItem, let nextItem = nextItem {
+            ddDelegate?.ddTabBar?(ddTabBar, didSwitch: previousItem, toItem: nextItem)
+        }
+        
+        if let selectedViewController = viewController(at: toIndex) {
+            ddDelegate?.ddTabBarController?(self, didSelect: selectedViewController)
+        }
+    }
+    
+    func viewController(at index: Int) -> UIViewController? {
+        guard index >= 0 && index < viewControllers?.count ?? 0 else { return nil }
+        return viewControllers?[index]
     }
 }
