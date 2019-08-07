@@ -20,7 +20,7 @@ class ViewController: DDTabBarController {
     func setupUI() {
         let calendar = DDTabBarItem(icon: #imageLiteral(resourceName: "calendar"),title: "Calendar")
         let location = DDTabBarItem(icon: #imageLiteral(resourceName: "location"), title: "Location")
-        let onNow = DDTabBarItem(height: 110,icon: #imageLiteral(resourceName: "play"), title: "On Now", wrapperMode: .rounded)
+        let onNow = DDTabBarItem(height: 100,icon: #imageLiteral(resourceName: "play"), title: "On Now", wrapperMode: .rounded)
         let timer = DDTabBarItem(icon: #imageLiteral(resourceName: "timer"), title: "Time")
         let account = DDTabBarItem(icon: #imageLiteral(resourceName: "account"), title: "Account")
         
