@@ -10,6 +10,12 @@
 		0365D5BA500FEA2BE86EF0D910DD90D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		0BC46021FBE405FFF77024422C4516B9 /* Pods-DDTabBarController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F48335C92C5E09FA4AAFC4FAA2749925 /* Pods-DDTabBarController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A57B65E5A82F9488B0F077017D0FC07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		4E419F4622FC0516007D3FF8 /* DDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4022FC0515007D3FF8 /* DDTabBarController.swift */; };
+		4E419F4722FC0516007D3FF8 /* DDTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4122FC0515007D3FF8 /* DDTabBar.swift */; };
+		4E419F4822FC0516007D3FF8 /* DDTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4222FC0516007D3FF8 /* DDTabBarItem.swift */; };
+		4E419F4922FC0516007D3FF8 /* DDWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4322FC0516007D3FF8 /* DDWrapperView.swift */; };
+		4E419F4A22FC0516007D3FF8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4422FC0516007D3FF8 /* Constant.swift */; };
+		4E419F4B22FC0516007D3FF8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419F4522FC0516007D3FF8 /* UIView+Extensions.swift */; };
 		60044421816A1A56B65956ECE9C97957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		7D23EE4053B8657AE2F2B29C180E436E /* Pods-DDTabBarController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9E6461228F6007B79393A98D91D22 /* Pods-DDTabBarController_Tests-dummy.m */; };
 		7F6EA939F6E57CC65061D6495656C658 /* Pods-DDTabBarController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AAA00ECC3873967EBBD6CCA086ACA0 /* Pods-DDTabBarController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,7 +49,12 @@
 		1A804F5E29001BCF3DC2D8BFC0F85AE9 /* DDTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDTabBarController-prefix.pch"; sourceTree = "<group>"; };
 		39FF1E9DAE88F3C8F2B4A729298D1820 /* DDTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DDTabBarController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F1B959795B4099AE92B854E3BE65AD5 /* Pods-DDTabBarController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDTabBarController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4E6A5FAE22FABC4300AD3818 /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Classes; path = DDTabBarController/Classes; sourceTree = "<group>"; };
+		4E419F4022FC0515007D3FF8 /* DDTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDTabBarController.swift; path = DDTabBarController/Classes/DDTabBarController.swift; sourceTree = "<group>"; };
+		4E419F4122FC0515007D3FF8 /* DDTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDTabBar.swift; path = DDTabBarController/Classes/DDTabBar.swift; sourceTree = "<group>"; };
+		4E419F4222FC0516007D3FF8 /* DDTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDTabBarItem.swift; path = DDTabBarController/Classes/DDTabBarItem.swift; sourceTree = "<group>"; };
+		4E419F4322FC0516007D3FF8 /* DDWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDWrapperView.swift; path = DDTabBarController/Classes/DDWrapperView.swift; sourceTree = "<group>"; };
+		4E419F4422FC0516007D3FF8 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = DDTabBarController/Classes/Constant.swift; sourceTree = "<group>"; };
+		4E419F4522FC0516007D3FF8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "DDTabBarController/Classes/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		50A8984D6E6058C42EECE04C535755D5 /* DDTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		634917208D3AB6A3491A56EBE08FDF5C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,7 +219,12 @@
 		E2FD9A72EC2E09505831A2CA9FF81FFB /* DDTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				4E6A5FAE22FABC4300AD3818 /* Classes */,
+				4E419F4422FC0516007D3FF8 /* Constant.swift */,
+				4E419F4122FC0515007D3FF8 /* DDTabBar.swift */,
+				4E419F4022FC0515007D3FF8 /* DDTabBarController.swift */,
+				4E419F4222FC0516007D3FF8 /* DDTabBarItem.swift */,
+				4E419F4322FC0516007D3FF8 /* DDWrapperView.swift */,
+				4E419F4522FC0516007D3FF8 /* UIView+Extensions.swift */,
 				F26183821DB39CFE7D2F93670B2C407E /* Pod */,
 				64179951645C1B8A8EDA5FA8E12738D0 /* Support Files */,
 			);
@@ -364,7 +380,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E419F4B22FC0516007D3FF8 /* UIView+Extensions.swift in Sources */,
+				4E419F4922FC0516007D3FF8 /* DDWrapperView.swift in Sources */,
+				4E419F4822FC0516007D3FF8 /* DDTabBarItem.swift in Sources */,
 				AFCAC483CB98D3EFA50566F4F3BE99A5 /* DDTabBarController-dummy.m in Sources */,
+				4E419F4622FC0516007D3FF8 /* DDTabBarController.swift in Sources */,
+				4E419F4722FC0516007D3FF8 /* DDTabBar.swift in Sources */,
+				4E419F4A22FC0516007D3FF8 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
