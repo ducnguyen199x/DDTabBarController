@@ -30,7 +30,7 @@ open class DDTabBar: UITabBar {
         // Container View
         let containerView = UIView()
         addSubview(containerView)
-        containerView.backgroundColor = .white
+        containerView.backgroundColor = .clear
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
             // Constraints
