@@ -27,6 +27,9 @@ open class DDTabBarController: UITabBarController {
         }
     }
     
+    // Constraint Properties
+    var bottomConstraint: NSLayoutConstraint?
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         tabBar.isHidden = true
@@ -44,7 +47,7 @@ open class DDTabBarController: UITabBarController {
         // Constraints
         tabBar.leading(toView: view)
         tabBar.trailing(toView: view)
-        tabBar.bottom(toView: view)
+        bottomConstraint = tabBar.bottom(toView: view)
         
         for (i, item) in items.enumerated() {
             item.tag = i
@@ -82,8 +85,35 @@ open class DDTabBarController: UITabBarController {
         }
     }
     
-    func viewController(at index: Int) -> UIViewController? {
+    open func viewController(at index: Int) -> UIViewController? {
         guard index >= 0 && index < viewControllers?.count ?? 0 else { return nil }
         return viewControllers?[index]
+    }
+    
+    open func hideTabBar(animationDuration: TimeInterval = 0) {
+        guard let ddTabBar = ddTabBar, ddTabBar.showedUp else { return }
+        toggleTabBar(true, animationDuration: animationDuration)
+        ddTabBar.showedUp = false
+    }
+    
+    open func showTabBar(animationDuration: TimeInterval = 0) {
+        guard let ddTabBar = ddTabBar, !ddTabBar.showedUp else { return }
+        toggleTabBar(false, animationDuration: animationDuration)
+        ddTabBar.showedUp = true
+    }
+    
+    func toggleTabBar(_ isHidden: Bool, animationDuration: TimeInterval = 0) {
+        if !isHidden {
+            self.ddTabBar?.isHidden = isHidden
+        }
+        
+        UIView.animate(withDuration: animationDuration, animations: { [weak self] in
+            self?.bottomConstraint?.constant = isHidden ? self?.ddTabBar?.maxHeight ?? 0 : 0
+            self?.view.layoutIfNeeded()
+        }) { [weak self] _ in
+            if isHidden {
+                self?.ddTabBar?.isHidden = isHidden
+            }
+        }
     }
 }

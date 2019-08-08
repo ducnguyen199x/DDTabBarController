@@ -10,11 +10,14 @@ import Foundation
 open class DDTabBar: UITabBar {
     open var ddBarItems: [DDTabBarItem] = []
     private var height: CGFloat = 0
+    var maxHeight: CGFloat = 0
+    open var showedUp: Bool = true
     
     public convenience init(items: [DDTabBarItem], height: CGFloat) {
         self.init()
         ddBarItems = items
         self.height = height
+        self.maxHeight = height
         translatesAutoresizingMaskIntoConstraints = false
         setupView()
     }
@@ -52,10 +55,14 @@ open class DDTabBar: UITabBar {
         ddBarItems.forEach { item in
             item.translatesAutoresizingMaskIntoConstraints = false
             stackView.addArrangedSubview(item)
-            if item.height < 0 {
+            let itemHeight = item.height
+            if itemHeight < 0 {
                 item.height(height)
             } else {
-                item.height(item.height)
+                item.height(itemHeight)
+            }
+            if itemHeight > maxHeight {
+                maxHeight = itemHeight
             }
         }
     }
