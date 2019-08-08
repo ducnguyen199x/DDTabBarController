@@ -19,7 +19,9 @@ class DDWrapperView: UIView {
         setupView()
     }
     
-    func setupView() {}
+    func setupView() {
+        backgroundColor = .clear
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()

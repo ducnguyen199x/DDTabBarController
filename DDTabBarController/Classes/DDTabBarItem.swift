@@ -30,7 +30,6 @@ open class DDTabBarItem: UIButton {
         addSubview(wrapperView)
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
         wrapperView.isUserInteractionEnabled = false
-        wrapperView.backgroundColor = .white
         
         // Constraints
         wrapperView.top(toView: self)
