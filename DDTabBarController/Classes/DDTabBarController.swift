@@ -23,6 +23,7 @@ open class DDTabBarController: UITabBarController {
     }
     private var barItemSelectedColor: UIColor = DDConstant.barItemSelectedColor {
         didSet {
+            let selectedIndex = (self.selectedIndex == Int.max) ? 0 : self.selectedIndex
             ddTabBar?.barItem(at: selectedIndex)?.setColor(barItemSelectedColor)
         }
     }
