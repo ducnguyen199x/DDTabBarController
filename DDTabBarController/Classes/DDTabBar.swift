@@ -12,6 +12,7 @@ open class DDTabBar: UITabBar {
     private var height: CGFloat = 0
     var maxHeight: CGFloat = 0
     open var showedUp: Bool = true
+    private var containerView = UIView()
     
     public convenience init(items: [DDTabBarItem], height: CGFloat) {
         self.init()
@@ -29,6 +30,7 @@ open class DDTabBar: UITabBar {
         
         // Container View
         let containerView = UIView()
+        self.containerView = containerView
         addSubview(containerView)
         containerView.backgroundColor = .clear
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +67,10 @@ open class DDTabBar: UITabBar {
                 maxHeight = itemHeight
             }
         }
+    }
+    
+    open func setBackgroundColor(_ color: UIColor) {
+        containerView.backgroundColor = color
     }
     
     open func barItem(at index: Int) -> DDTabBarItem? {

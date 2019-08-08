@@ -41,7 +41,7 @@ class ViewController: DDTabBarController {
         
         setTabBar(items: [calendar, location, onNow, timer, account], height: 90)
         viewControllers = [vc1, vc2, vc3, vc4, vc5]
-        ddTabBar?.backgroundColor = .black
+        ddTabBar?.setBackgroundColor(.blue)
     }
     
     func viewController(for identifier: String) -> UIViewController {
