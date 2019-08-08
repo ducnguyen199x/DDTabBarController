@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol PageContentControllerDelegate: class {
+    func didTapToggleTabBar(_ pageContentController: PageContentController, isHidden: Bool)
+}
+
 class PageContentController: UIViewController {
     @IBOutlet weak var label: UILabel!
-    var count = 0
+    var count = 1
+    weak var delegate: PageContentControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +24,6 @@ class PageContentController: UIViewController {
     @IBAction func buttonDidTap(_ sender: Any) {
         count += 1
         label.text = "\(count)"
+        delegate?.didTapToggleTabBar(self, isHidden: count % 2 == 0)
     }
 }

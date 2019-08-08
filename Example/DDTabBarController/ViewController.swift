@@ -27,7 +27,8 @@ class ViewController: DDTabBarController {
         onNow.ddContentWrapperView?.layer.borderWidth = 0.5
         onNow.ddContentWrapperView?.layer.borderColor = UIColor.black.cgColor
         
-        let vc1 = viewController(for: "PageContent")
+        let vc1 = viewController(for: "PageContent") as! PageContentController
+        vc1.delegate = self
         vc1.view.backgroundColor = .green
         let vc2 = UIViewController()
         vc2.view.backgroundColor = .blue
@@ -61,5 +62,11 @@ extension ViewController: DDTabBarControllerDelegate {
         if toIndex == 2 {
             toItem.ddContentWrapperView?.backgroundColor = .lightGray
         }
+    }
+}
+
+extension ViewController: PageContentControllerDelegate {
+    func didTapToggleTabBar(_ pageContentController: PageContentController, isHidden: Bool) {
+        isHidden ? hideTabBar(animationDuration: 0.25) : showTabBar(animationDuration: 0.25)
     }
 }
