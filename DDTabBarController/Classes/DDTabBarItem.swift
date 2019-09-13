@@ -9,19 +9,25 @@ import Foundation
 
 open class DDTabBarItem: UIButton {
     private var icon: UIImage?
+    private var selectedIcon: UIImage?
     private var title: String?
     private var iconHeight: CGFloat = DDConstant.iconHeight
     open var iconImageView: UIImageView?
     open var ddTitleLabel: UILabel?
     open var ddContentWrapperView: UIView?
-    
     var height: CGFloat = -1
     
-    public convenience init(height: CGFloat = -1, icon: UIImage, title: String?, iconHeight: CGFloat = DDConstant.iconHeight, backgroundImage: UIImage? = nil, wrapperMode: DDWrapperMode = .normal) {
+    open override var isSelected: Bool {
+        didSet {
+            self.iconImageView?.image = isSelected ? selectedIcon : icon
+        }
+    }
+    
+    public convenience init(height: CGFloat = -1, icon: UIImage, selectedIcon: UIImage? = nil, title: String?, iconHeight: CGFloat = DDConstant.iconHeight, backgroundImage: UIImage? = nil, wrapperMode: DDWrapperMode = .normal) {
         self.init()
         self.height = height
         setupDDContentWrapperView(wrapperMode: wrapperMode)
-        setupIcon(withImage: icon, iconHeight: iconHeight)
+        setupIcon(with: icon, selectedImage: selectedIcon ?? icon, iconHeight: iconHeight)
         setupTitle(withTitle: title)
     }
     
@@ -30,6 +36,7 @@ open class DDTabBarItem: UIButton {
         addSubview(wrapperView)
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
         wrapperView.isUserInteractionEnabled = false
+        wrapperView.clipsToBounds = true
         
         // Constraints
         wrapperView.top(toView: self)
@@ -39,7 +46,9 @@ open class DDTabBarItem: UIButton {
         ddContentWrapperView = wrapperView
     }
     
-    func setupIcon(withImage image: UIImage, iconHeight: CGFloat) {
+    func setupIcon(with image: UIImage, selectedImage: UIImage, iconHeight: CGFloat) {
+        self.icon = image
+        self.selectedIcon = selectedImage
         let imageView = UIImageView()
         ddContentWrapperView?.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -79,9 +88,10 @@ open class DDTabBarItem: UIButton {
         ddTitleLabel = label
     }
     
-    open func setIcon(withImage image: UIImage?) {
+    open func setIcon(withImage image: UIImage?, selectedImage: UIImage?) {
         self.icon = image
-        self.iconImageView?.image = image
+        self.selectedIcon = selectedImage
+        self.iconImageView?.image = isSelected ? selectedImage : image
     }
     
     open func setTitle(_ title: String?) {

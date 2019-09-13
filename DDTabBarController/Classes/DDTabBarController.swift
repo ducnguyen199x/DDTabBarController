@@ -85,7 +85,9 @@ open class DDTabBarController: UITabBarController {
         let nextItem = ddTabBar?.barItem(at: toIndex)
 
         previousItem?.setColor(barItemColor)
+        previousItem?.isSelected = false
         nextItem?.setColor(barItemSelectedColor)
+        nextItem?.isSelected = true
         selectedIndex = toIndex
         
         if let ddTabBar = ddTabBar, let previousItem = previousItem, let nextItem = nextItem {
