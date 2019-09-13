@@ -18,6 +18,12 @@ open class DDTabBarController: UITabBarController {
     private var ddTabBarHeight: CGFloat = DDConstant.tabBarHeight
     private var barItemColor: UIColor = DDConstant.barItemColor {
         didSet {
+            let selectedIndex = (self.selectedIndex == Int.max) ? 0 : self.selectedIndex
+            for (index, item) in (ddTabBar?.ddBarItems ?? []).enumerated() {
+                if index != selectedIndex {
+                    item.setColor(barItemColor)
+                }
+            }
             ddTabBar?.tintColor = barItemColor
         }
     }
@@ -67,6 +73,11 @@ open class DDTabBarController: UITabBarController {
     @objc func switchTap(sender: UIButton) {
         let newIndex = sender.tag
         changeTab(from: selectedIndex, to: newIndex)
+    }
+    
+    open func changeTab(to index: Int) {
+        let currentIndex = (self.selectedIndex == Int.max) ? 0 : self.selectedIndex
+        changeTab(from: currentIndex, to: index)
     }
     
     private func changeTab(from fromIndex: Int, to toIndex: Int) {
