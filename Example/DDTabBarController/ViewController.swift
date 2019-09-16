@@ -18,11 +18,12 @@ class ViewController: DDTabBarController {
     }
     
     func setupUI() {
-        let calendar = DDTabBarItem(icon: #imageLiteral(resourceName: "calendar"), title: "Calendar")
-        let location = DDTabBarItem(icon: #imageLiteral(resourceName: "location"), title: "Location")
-        let onNow = DDTabBarItem(height: 100, icon: #imageLiteral(resourceName: "play-unselected"), selectedIcon: #imageLiteral(resourceName: "play"), title: "On Now", wrapperMode: .rounded)
-        let timer = DDTabBarItem(icon: #imageLiteral(resourceName: "timer"), title: "Time")
-        let account = DDTabBarItem(icon: #imageLiteral(resourceName: "account"), title: "Account")
+        
+        let calendar = DDTabBarItem(icon: DDIcon(image: #imageLiteral(resourceName: "calendar"), height: 24), title: "Calendar")
+        let location = DDTabBarItem(icon: DDIcon(image: #imageLiteral(resourceName: "location"), height: 24), title: "Location")
+        let onNow = DDTabBarItem(height: 84, icon: DDIcon(image: #imageLiteral(resourceName: "play-unselected"), selectedImage: #imageLiteral(resourceName: "play"), height: 24, topPadding: 16, bottomPadding: 8), title: "On Now", wrapperMode: .rounded)
+        let timer = DDTabBarItem(icon: DDIcon(image: #imageLiteral(resourceName: "timer"), height: 24), title: "Time")
+        let account = DDTabBarItem(icon: DDIcon(image: #imageLiteral(resourceName: "account"), height: 24), title: "Account")
         
         onNow.ddContentWrapperView?.addBackgroundGradient(colors: [#colorLiteral(red: 0.1764705882, green: 0.1764705882, blue: 0.1764705882, alpha: 1), #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)], vertical: true, bounds: CGRect(x: 0, y: 0, width: 72, height: 72))
         
@@ -38,7 +39,7 @@ class ViewController: DDTabBarController {
         let vc5 = UIViewController()
         vc5.view.backgroundColor = .brown
         
-        setTabBar(items: [calendar, location, onNow, timer, account], height: 90)
+        setTabBar(items: [calendar, location, onNow, timer, account], height: 80)
         viewControllers = [vc1, vc2, vc3, vc4, vc5]
         setBarItemColor(.lightGray)
         setBarItemSelectedColor(.green)
