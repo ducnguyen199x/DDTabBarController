@@ -11,4 +11,7 @@ public struct DDConstant {
     public static var barItemTitleFont: UIFont = .systemFont(ofSize: 14)
     public static var tabBarHeight: CGFloat = 40
     public static var iconHeight: CGFloat = 35
+    public static var iconTopPadding: CGFloat = 16
+    public static var iconBottomPadding: CGFloat = 4
+
 }

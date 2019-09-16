@@ -7,9 +7,29 @@
 
 import Foundation
 
+public struct DDIcon {
+    var image: UIImage
+    var selectedImage: UIImage
+    var height: CGFloat
+    var topPadding: CGFloat
+    var bottomPadding: CGFloat
+    
+    public init(image: UIImage,
+         selectedImage: UIImage? = nil,
+         height: CGFloat = DDConstant.iconHeight,
+         topPadding: CGFloat = DDConstant.iconTopPadding,
+         bottomPadding: CGFloat = DDConstant.iconBottomPadding) {
+        self.image = image
+        self.selectedImage = selectedImage ?? image
+        self.height = height
+        self.topPadding = topPadding
+        self.bottomPadding = bottomPadding
+    }
+}
+
 open class DDTabBarItem: UIButton {
-    private var icon: UIImage?
-    private var selectedIcon: UIImage?
+    private var icon = UIImage()
+    private var selectedIcon = UIImage()
     private var title: String?
     private var iconHeight: CGFloat = DDConstant.iconHeight
     open var iconImageView: UIImageView?
@@ -23,12 +43,16 @@ open class DDTabBarItem: UIButton {
         }
     }
     
-    public convenience init(height: CGFloat = -1, icon: UIImage, selectedIcon: UIImage? = nil, title: String?, iconHeight: CGFloat = DDConstant.iconHeight, backgroundImage: UIImage? = nil, wrapperMode: DDWrapperMode = .normal) {
+    public convenience init(height: CGFloat = -1,
+                            icon: DDIcon,
+                            title: String?,
+                            backgroundImage: UIImage? = nil,
+                            wrapperMode: DDWrapperMode = .normal) {
         self.init()
         self.height = height
         setupDDContentWrapperView(wrapperMode: wrapperMode)
-        setupIcon(with: icon, selectedImage: selectedIcon ?? icon, iconHeight: iconHeight)
-        setupTitle(withTitle: title)
+        setupIcon(with: icon)
+        setupTitle(withTitle: title, topPadding: icon.bottomPadding)
     }
     
     func setupDDContentWrapperView(wrapperMode: DDWrapperMode = .normal) {
@@ -46,15 +70,15 @@ open class DDTabBarItem: UIButton {
         ddContentWrapperView = wrapperView
     }
     
-    func setupIcon(with image: UIImage, selectedImage: UIImage, iconHeight: CGFloat) {
-        self.icon = image
-        self.selectedIcon = selectedImage
+    func setupIcon(with icon: DDIcon) {
+        self.icon = icon.image
+        self.selectedIcon = icon.selectedImage
         let imageView = UIImageView()
         ddContentWrapperView?.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        self.iconHeight = iconHeight
+        imageView.image = icon.image
+        self.iconHeight = icon.height
         
         // Constraints
         imageView.widthHeightRatio(ratio: 1)
@@ -62,14 +86,14 @@ open class DDTabBarItem: UIButton {
         imageView.equalHeight(toView: self, relatedBy: .lessThanOrEqual)
         imageView.centerX(toView: self)
         imageView.height(iconHeight, priority: .init(999))
-        imageView.top(toView: ddContentWrapperView, constant: 10)
+        imageView.top(toView: ddContentWrapperView, constant: icon.topPadding)
         imageView.leading(toView: ddContentWrapperView, relatedBy: .greaterThanOrEqual)
         imageView.trailing(toView: ddContentWrapperView, relatedBy: .lessThanOrEqual)
         
         iconImageView = imageView
     }
     
-    func setupTitle(withTitle title: String?) {
+    func setupTitle(withTitle title: String?, topPadding: CGFloat) {
         let label = UILabel()
         ddContentWrapperView?.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -80,15 +104,16 @@ open class DDTabBarItem: UIButton {
         
         // Constraints
         label.equalWidth(toView: self, constant: -10, relatedBy: .lessThanOrEqual)
-        label.topSpacing(toView: iconImageView, constant: 0)
+        label.topSpacing(toView: iconImageView, constant: topPadding)
         label.centerX(toView: self)
-        label.bottom(toView: ddContentWrapperView, constant: -10, relatedBy: .lessThanOrEqual)
+        label.bottom(toView: ddContentWrapperView, constant: -7, relatedBy: .lessThanOrEqual)
         label.leading(toView: ddContentWrapperView, relatedBy: .greaterThanOrEqual)
         label.trailing(toView: ddContentWrapperView, relatedBy: .lessThanOrEqual)
+        label.height(12)
         ddTitleLabel = label
     }
     
-    open func setIcon(withImage image: UIImage?, selectedImage: UIImage?) {
+    open func setIcon(withImage image: UIImage, selectedImage: UIImage) {
         self.icon = image
         self.selectedIcon = selectedImage
         self.iconImageView?.image = isSelected ? selectedImage : image
