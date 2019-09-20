@@ -130,4 +130,14 @@ open class DDTabBarController: UITabBarController {
             }
         }
     }
+    
+    open func showBadge(count: Int? = nil, at index: Int) {
+        guard let item = ddTabBar?.barItem(at: index) else { return }
+        item.showBadge(count)
+    }
+    
+    open func hideBadge(at index: Int) {
+        guard let item = ddTabBar?.barItem(at: index) else { return }
+        item.hideBadge()
+    }
 }

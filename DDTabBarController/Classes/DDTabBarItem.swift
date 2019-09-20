@@ -35,8 +35,31 @@ open class DDTabBarItem: UIButton {
     open var iconImageView: UIImageView?
     open var ddTitleLabel: UILabel?
     open var ddContentWrapperView: UIView?
+    open var ddBadgeView: DDBadgeView?
     var height: CGFloat = -1
     
+    private var badgeTopConstraint: NSLayoutConstraint?
+    private var badgeLeadingConstraint: NSLayoutConstraint?
+    private var badgeWidthConstraint: NSLayoutConstraint?
+    
+    open var badgeWidth: CGFloat = DDConstant.badgeWidth {
+        didSet {
+            badgeWidthConstraint?.constant = badgeWidth
+        }
+    }
+    
+    open var badgeLeftInset: CGFloat = DDConstant.badgeLeftInset {
+        didSet {
+            badgeLeadingConstraint?.constant = badgeLeftInset
+        }
+    }
+    
+    open var badgeTopInset: CGFloat = DDConstant.badgeTopInset {
+        didSet {
+            badgeTopConstraint?.constant = badgeTopInset
+        }
+    }
+
     open override var isSelected: Bool {
         didSet {
             self.iconImageView?.image = isSelected ? selectedIcon : icon
@@ -53,6 +76,7 @@ open class DDTabBarItem: UIButton {
         setupDDContentWrapperView(wrapperMode: wrapperMode)
         setupIcon(with: icon)
         setupTitle(withTitle: title, topPadding: icon.bottomPadding)
+        setupBadge()
     }
     
     func setupDDContentWrapperView(wrapperMode: DDWrapperMode = .normal) {
@@ -111,6 +135,30 @@ open class DDTabBarItem: UIButton {
         label.trailing(toView: ddContentWrapperView, relatedBy: .lessThanOrEqual)
         label.height(12)
         ddTitleLabel = label
+    }
+    
+    func setupBadge() {
+        let badgeView = DDBadgeView(width: 8)
+        badgeView.backgroundColor = .red
+        addSubview(badgeView)
+        ddBadgeView = badgeView
+        badgeTopConstraint = badgeView.top(toView: self, constant: badgeTopInset)
+        badgeLeadingConstraint = badgeView.leading(toView: self, constant: badgeLeftInset)
+        badgeWidthConstraint = badgeView.width(badgeWidth)
+        ddBadgeView?.isHidden = true
+    }
+    
+    func showBadge(_ count: Int?) {
+        if let count = count {
+            ddBadgeView?.badgeCountLabel.text = "\(count)"
+        } else {
+            ddBadgeView?.badgeCountLabel.text = nil
+        }
+        ddBadgeView?.isHidden = false
+    }
+    
+    func hideBadge() {
+        ddBadgeView?.isHidden = true
     }
     
     open func setIcon(withImage image: UIImage, selectedImage: UIImage) {

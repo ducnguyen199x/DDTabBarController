@@ -13,5 +13,7 @@ public struct DDConstant {
     public static var iconHeight: CGFloat = 35
     public static var iconTopPadding: CGFloat = 16
     public static var iconBottomPadding: CGFloat = 4
-
+    public static var badgeWidth: CGFloat = 8
+    public static var badgeTopInset: CGFloat = 10
+    public static var badgeLeftInset: CGFloat = 45
 }
