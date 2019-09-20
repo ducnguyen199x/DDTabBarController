@@ -26,7 +26,7 @@ class ViewController: DDTabBarController {
         let account = DDTabBarItem(icon: DDIcon(image: #imageLiteral(resourceName: "account"), height: 24), title: "Account")
         
         onNow.ddContentWrapperView?.addBackgroundGradient(colors: [#colorLiteral(red: 0.1764705882, green: 0.1764705882, blue: 0.1764705882, alpha: 1), #colorLiteral(red: 0.1019607843, green: 0.1019607843, blue: 0.1019607843, alpha: 1)], vertical: true, bounds: CGRect(x: 0, y: 0, width: 72, height: 72))
-        
+        onNow.ddBadgeView?.badgeCountLabel.font = .systemFont(ofSize: 8)
         let vc1 = viewController(for: "PageContent") as! PageContentController
         vc1.delegate = self
         vc1.view.backgroundColor = .green
@@ -49,6 +49,7 @@ class ViewController: DDTabBarController {
         ddTabBar?.layer.shadowOpacity = 0.6
         ddTabBar?.layer.shadowOffset = CGSize(width: 0, height: -6)
         changeTab(to: 2)
+        showBadge(at: 2)
     }
     
     func viewController(for identifier: String) -> UIViewController {
